@@ -15,6 +15,10 @@ class FileUploadUI:
         self.create_widgets()
 
     def create_widgets(self):
+        # Main App Title
+        app_title = tk.Label(self.root, text="On My Agenda", font=("Segoe UI", 24, "bold"), bg="#f5f7fa", fg="#2c3e50")
+        app_title.pack(pady=(20, 5))
+
         title = tk.Label(self.root, text="Upload Course Outlines", font=("Segoe UI", 18, "bold"), bg="#f5f7fa", fg="#2c3e50")
         title.pack(pady=(20, 10))
 
@@ -34,16 +38,16 @@ class FileUploadUI:
         self.file_listbox.pack(pady=10)
 
         # Buttons frame
-        btn_frame = tk.Frame(frame, bg="#f5f7fa")
-        btn_frame.pack(pady=5)
+        btn_frame = tk.Frame(self.root, bg="#f5f7fa")
+        btn_frame.pack(pady=15)
 
         # Remove button
-        remove_btn = tk.Button(self.root, text="Remove Selected", command=self.remove_selected, bg="#e74c3c", fg="white", font=("Segoe UI", 10), width=18, relief="flat")
-        remove_btn.pack(padx=5)
+        remove_btn = tk.Button(btn_frame, text="Remove Selected", command=self.remove_selected, bg="#e74c3c", fg="white", font=("Segoe UI", 10), width=18, relief="flat")
+        remove_btn.pack(side="left", padx=10)
 
         # Process button
-        process_btn = tk.Button(self.root, text="Process Files", command=self.process_files, bg="#27ae60", fg="white", font=("Segoe UI", 10), width=18, relief="flat")
-        process_btn.pack(padx=5)
+        process_btn = tk.Button( btn_frame, text="Process Files", command=self.process_files, bg="#27ae60", fg="white", font=("Segoe UI", 10, "bold"), width=18, relief="flat")
+        process_btn.pack(side="left", padx=10)
 
     def select_files(self):
         if len(self.files) >= MAX_FILES: # Check if the user has already uploaded the maximum number of files
