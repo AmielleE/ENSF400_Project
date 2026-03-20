@@ -5,15 +5,13 @@ ENSF 400 Project
 
 ## Team Members (Team 3)
 
-Joshua Obinna-Eze
-
-Amielle El Makhzoumi
-
-Erioluwa Olubadejo
-
-Miriam Zeresenai
-
-Manjot Sekhon
+| Name                     |
+|--------------------------|
+| Joshua Obinna-Eze        |
+| Amielle El Makhzoumi     |
+| Erioluwa Olubadejo       |
+| Miriam Zeresenai         |
+| Manjot Sekhon            |
 
 ## Overview
 
