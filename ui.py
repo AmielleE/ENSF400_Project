@@ -8,7 +8,7 @@ class FileUploadUI:
     def __init__(self, root):
         self.root = root
         self.root.title("On My Agenda - Upload Course Outlines")
-        self.root.geometry("zoomed")
+        self.root.state("zoomed")
         self.root.configure(bg="#f5f7fa")
         self.files = []
 
