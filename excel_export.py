@@ -3,9 +3,10 @@ from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Font, Alignment
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.table import Table, TableStyleInfo
+from tkinter import Tk, filedialog
 
 
-def export_to_excel(deadline_df: pd.DataFrame, output_path: str = "deadlines.xlsx") -> None:
+def export_to_excel(deadline_df: pd.DataFrame, output_path: str | None = None) -> None:
     """
     Takes a DataFrame with columns:
         - classname
@@ -17,7 +18,28 @@ def export_to_excel(deadline_df: pd.DataFrame, output_path: str = "deadlines.xls
         - adds a Done column
         - color-codes rows by class
         - allows filtering/sorting in Excel
+
+    If no output_path is provided, the user is asked where to save the file.
     """
+
+    # If no output path is given, open a save dialog so the user can choose
+    if output_path is None:
+        root = Tk()
+        root.withdraw()  # Hide the small main tkinter window
+
+        output_path = filedialog.asksaveasfilename(
+            defaultextension=".xlsx",
+            filetypes=[("Excel files", "*.xlsx")],
+            initialfile="deadlines.xlsx",
+            title="Save Excel File As"
+        )
+
+        root.destroy()
+
+        # If the user cancels the save dialog, stop the function
+        if not output_path:
+            print("Save cancelled.")
+            return
 
     # Make a copy so the original DataFrame is not modified
     df = deadline_df.copy()
@@ -44,7 +66,6 @@ def export_to_excel(deadline_df: pd.DataFrame, output_path: str = "deadlines.xls
 
     # Define final column order
     columns = ["classname", "assignment_name", "due_date", "done_status"]
-
 
     # Write headers
     for col_num, column_name in enumerate(columns, start=1):
@@ -127,3 +148,4 @@ def export_to_excel(deadline_df: pd.DataFrame, output_path: str = "deadlines.xls
 
     # Save the workbook
     wb.save(output_path)
+    print(f"Excel file saved to: {output_path}")
