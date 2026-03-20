@@ -22,7 +22,7 @@ class FileUploadUI:
         title = tk.Label(self.root, text="Upload Course Outlines", font=("Segoe UI", 18, "bold"), bg="#f5f7fa", fg="#2c3e50")
         title.pack(pady=(20, 10))
 
-        subtitle = tk.Label(self.root, text="(PDF files only, max 6)", font=("Segoe UI", 10), bg="#f5f7fa", fg="#7f8c8d") # Subtitle for file requirements instructions
+        subtitle = tk.Label(self.root, text="Upload PDF or TXT files (max 6)", font=("Segoe UI", 10), bg="#f5f7fa", fg="#7f8c8d") # Subtitle for file requirements instructions
         subtitle.pack(pady=(0, 10))
 
         # Main frame
