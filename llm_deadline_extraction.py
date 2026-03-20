@@ -61,7 +61,7 @@ Rules:
 - Do not include explanations.
 - Run a final check to ensure all due dates are in the correct format and that all required fields are present.
 - No empty fields. If any information is missing, make reasonable inferences or leave it out if inference isn't possible.
-- Do not return an empty array, if not deadlines are found go through the text again and make sure nothing was missed.
+- Do not return an empty array, if not deadlines are found go through the text again. Under no circumstances should you return an empty array.
 
 File name: {filename}
 
