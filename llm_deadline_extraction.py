@@ -55,11 +55,13 @@ From the text below, extract all important deadlines and return only structured 
 Rules:
 - Return every assignment, lab, quiz, midterm, final, project, or other graded deadline if a due date is provided.
 - Use the course name as "classname".
-- Use the exact assignment/test/lab name as "assignment_name".
+- Use the exact assignment/test/lab name as "assignment_name" or make reasonable inferences if not provided.
 - Convert every due date into MM/DD/YYYY format.
 - If the year is missing but can be reasonably inferred from the document, infer it.
-- If no deadlines are found, return an empty array.
 - Do not include explanations.
+- Run a final check to ensure all due dates are in the correct format and that all required fields are present.
+- No empty fields. If any information is missing, make reasonable inferences or leave it out if inference isn't possible.
+- Do not return an empty array, if not deadlines are found go through the text again and make sure nothing was missed.
 
 File name: {filename}
 
