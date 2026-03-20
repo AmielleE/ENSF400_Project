@@ -12,7 +12,7 @@ class DataFrameEditor:
         self.root.configure(bg="#f5f7fa")
 
         self.tree = None 
-        self.create_table() # Create the table to display the DataFrame
+        self.create_widgets() # Create the table to display the DataFrame
 
         self.root.mainloop()
 
