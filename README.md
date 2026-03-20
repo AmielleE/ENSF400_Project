@@ -44,6 +44,19 @@ Users upload course outlines, and the system uses a Large Language Model (LLM) t
 
 - excel_export.py: Excel generation
 
-## Requirements
+## Setup
+
+### Requirements
 
     pip install -r requirements.txt
+
+### API Key
+Create a .env file and add the following line:
+
+GOOGLE_API_KEY=your_api_key_here
+
+Get your key from [[Google AI Studio](https://aistudio.google.com/api-keys?project=gen-lang-client-0843282307)]
+
+### Run App
+
+    python app.py
