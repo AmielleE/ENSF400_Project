@@ -148,4 +148,3 @@ def export_to_excel(deadline_df: pd.DataFrame, output_path: str | None = None) -
 
     # Save the workbook
     wb.save(output_path)
-    print(f"Excel file saved to: {output_path}")

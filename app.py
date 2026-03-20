@@ -47,8 +47,7 @@ class App(FileUploadUI):
                 print("No data to export.")
                 return
 
-            export_to_excel(updated_df)
-            print("Excel file successfully generated!")
+            export_to_excel(updated_df) # Export to Excel
 
         except Exception as e:
             messagebox.showerror("Error", f"Something went wrong:\n{e}")

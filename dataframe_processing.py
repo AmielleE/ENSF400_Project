@@ -108,7 +108,4 @@ class DataFrameEditor:
 
         self.df = pd.DataFrame(new_data, columns=self.df.columns) # Create a new DataFrame with the edited data
 
-        print("Updated DataFrame:")
-        print(self.df)
-
         self.root.destroy()
